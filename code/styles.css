@@ -6,15 +6,6 @@ html, body{
     background-color: rgb(182, 182, 182);
 }
 
-/* visualizations
-.row{
-    border: 2px dotted aqua;
-}
-.col{
-    border: 1px solid red;
-}
-*/
-
 #action-bar, #email-message{
     background-color: rgb(233, 233, 233);
 }
@@ -45,6 +36,10 @@ html, body{
     color:rgb(138, 43, 226);
     border-radius: 25px;
     height:4vh;
+}
+
+#search-bar {
+    background-color: white;
 }
 
 .btn-outline-primary{
@@ -107,11 +102,13 @@ html, body{
 }
 
 .email-list-item{
-    background-color: rgb(182, 182, 182);
-
-    padding: 5px;
+    background-color: white;
+    margin: 0 5px;
 }
 
+.email-list-item > * {
+    background-color: white;
+}
 
 /*small and xsmall display media selectors*/
 @media (max-width:768px){

@@ -36,7 +36,6 @@ html, body{
 }
 
 .btn, #search-bar{
-    background-color: rgb(233, 233, 233);
     color:rgb(138, 43, 226);
     border-radius: 25px;
     height:4vh;
@@ -60,8 +59,12 @@ html, body{
     color:rgb(138, 43, 226);
 }
 
+#bottom-bar > .btn {
+    background-color: rgb(233, 233, 233);
+}
+
 .btn:hover, .btn:focus, .btn:active{
-    background-color: rgba(176, 117, 231, 0.74);
+    background-color: rgb(202, 158, 243);
     color: white;
 }
 
@@ -81,12 +84,6 @@ html, body{
     height: 0;
 }
 
-.vertical-scroll > .btn {
-    margin: 10px 0 10px 0;
-    border-radius: 10px;
-}
-
-
 #email-actions, #back-button{
     background-color: rgb(182, 182, 182);
 }
@@ -105,8 +102,7 @@ html, body{
     border-radius: 0;
 }
 
-.email-list-item{
-    background-color: white;
+.emailLabel{
     margin: 0 5px;
 }
 
@@ -114,14 +110,25 @@ html, body{
     background-color: white;
 }
 
-.selected, #email-message{
-    border: 2px inset rgb(138, 43, 226);
-    border-radius: 10px;
+.email-list-item:hover{
+    background-color: rgba(176, 117, 231, 0.74);
+    color: rgb(182, 182, 182);
 }
 
+#email-message{
+    border: 2px inset rgb(138, 43, 226);
+}
+
+.selected  * {
+    background-color: rgb(138, 43, 226);
+    color:white;
+}
+.selected input {
+    background-color: white;
+}
 
 /* offcanvas */
-.offcanvas-body {
+.offcanvas-body{
     background-color: rgb(138, 43, 226);
     color:white;
 }
@@ -136,6 +143,26 @@ html, body{
     height: 319px;
 }
 
+.email-reactions > .btn{
+    background-color: rgb(138, 43, 226);
+    color: white;
+}
+
+#email-body-reply{
+    background-color: rgb(233, 233, 233);
+}
+
+h1{
+    font-size: xx-large;
+}
+
+img{
+    border: 5px solid rgba(176, 117, 231, 0.74);
+}
+
+#email-content{
+    border: 2px inset rgba(176, 117, 231, 0.74);
+}
 
 /*small and xsmall display media selectors*/
 @media (max-width:768px){

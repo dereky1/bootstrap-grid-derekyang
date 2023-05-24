@@ -9,6 +9,10 @@ html, body{
     background-color: rgb(233, 233, 233);
 }
 
+.btn, #search-bar{
+    color:rgb(138, 43, 226);
+    height:4vh;
+}
 
 .horizontal-scroll {
     background-color: rgb(233, 233, 233);
@@ -35,23 +39,12 @@ html, body{
     color: white;
 }
 
-.btn, #search-bar{
-    color:rgb(138, 43, 226);
-    border-radius: 25px;
-    height:4vh;
-}
-
 #search-bar {
     background-color: white;
 }
 
-.btn-outline-primary{
-    border-color: rgb(138, 43, 226);
-}
-
-.btn-light, .btn-outline-warning{
-    border: none;
-    border-radius: 5px;
+.btn-light, .btn-outline-warning, .btn-outline-secondary, .card{
+    border: none; 
 }
 
 #search-bar::placeholder, .offcanvas-header, .offcanvas-footer{
@@ -115,10 +108,6 @@ html, body{
     color: rgb(182, 182, 182);
 }
 
-#email-message{
-    border: 2px inset rgb(138, 43, 226);
-}
-
 .selected  * {
     background-color: rgb(138, 43, 226);
     color:white;
@@ -140,7 +129,7 @@ html, body{
 #offcanvasActions{
     background-color: rgb(182, 182, 182);
     margin: 4vh;
-    height: 319px;
+    height: 200px;
 }
 
 .email-reactions > .btn{
@@ -160,9 +149,17 @@ img{
     border: 5px solid rgba(176, 117, 231, 0.74);
 }
 
-#email-content{
-    border: 2px inset rgba(176, 117, 231, 0.74);
+.horizontal-hide{
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+
+.space {
+    height:2vh;
+}
+
+
 
 /*small and xsmall display media selectors*/
 @media (max-width:768px){

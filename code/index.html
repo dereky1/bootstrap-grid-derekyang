@@ -31,7 +31,7 @@
             </div>
 
             <!--search bar-->
-            <div class="col-8 col-sm-8 col-md-6 col-lg-6 rounded-4 flex-nowrap">
+            <div class="col-10 flex-nowrap">
                 <input id="search-bar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">                    
             </div>
         
@@ -46,7 +46,7 @@
         <!--action bar when in desktop mode-->
         <div id="email-actions" class="col col-12">
 
-            <div class="card offcanvas offcanvas-xs offcanvas-sm offcanvas-md offcanvas-xl offcanvas-lg offcanvas-start" data-bs-backdrop="false" tabindex="-1" id="offcanvasActions" aria-labelledby="offcanvasActionsLabel">
+            <div class="card offcanvas offcanvas-xs offcanvas-sm offcanvas-md offcanvas-xl offcanvas-lg offcanvas-start" data-bs-backdrop="false" tabindex="-1" id="offcanvasActions">
 
                 <!--back arrow-->
                 <div class="col-12 text-center">
@@ -59,8 +59,9 @@
 
                 <!--reply, reply-all, forward, archive, delete, mark-as-spam-->
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-light col-12"><a href="#text-area">Reply</a></button>
-                    <button type="button" class="btn btn-light col-12">Reply-All</button>
+                    
+                    <button type="button" class="btn btn-light col-12" onclick="window.location.href='#text-area';">Reply</button>
+                    <button type="button" class="btn btn-light col-12" onclick="window.location.href='#text-area';">Reply-All</button>
                     <button type="button" class="btn btn-light col-12">Forward</button>
                     <button type="button" class="btn btn-light col-12">Mark-as-Spam</button>
                     <button type="button" class="btn btn-light col-12">Archive</button>
@@ -140,355 +141,410 @@
             </div>
 
             <!--Email box-->
-            <div id="email-box" class="col-12 col-sm-12 col-md-9 col-lg-4 vertical-scroll">
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-1" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-1" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-1" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-1" class="p-0">
+            <div id="email-box" class="col-12 col-sm-12 col-md-9 col-lg-4 vertical-scroll p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-1" checked>
+                    <label for="email-item-1" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-1">
+                        <label for="favButton-1" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">info@flutecombs.com</span>
+                        <span class="col-5 text-truncate">You're Invited to see Flute Combs LIVE!</span>
+                        <span class="col-2 text-truncate">5:04PM May 23</span>
                     </label>
                 </div>
-                <div class="selected d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-2" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-2" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-2" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-2" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-2">
+                    <label for="email-item-2" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-2">
+                        <label for="favButton-2" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">RENT!!!!!</span>
+                        <span class="col-2 text-truncate">4:49PM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-3" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-3" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-3" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-3" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-3">
+                    <label for="email-item-3" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-3">
+                        <label for="favButton-3" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">RENT</span>
+                        <span class="col-2 text-truncate">3:35PM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-4" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-4" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-4" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-4" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-4">
+                    <label for="email-item-4" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-4">
+                        <label for="favButton-4" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">Rent is Due!!</span>
+                        <span class="col-2 text-truncate">2:05PM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-5" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-5" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-5" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-5" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-5">
+                    <label for="email-item-5" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-5">
+                        <label for="favButton-5" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">Rent is overdue</span>
+                        <span class="col-2 text-truncate">12:03PM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-6" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-6" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-6" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-6" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-6">
+                    <label for="email-item-6" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-6">
+                        <label for="favButton-6" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">Rent??</span>
+                        <span class="col-2 text-truncate">10:56AM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-7" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-7" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-7" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-7" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-7">
+                    <label for="email-item-7" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-7">
+                        <label for="favButton-7" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">george@gmail.com</span>
+                        <span class="col-5 text-truncate">Late Rent Again?</span>
+                        <span class="col-2 text-truncate">9:34AM May 23</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-8" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-8" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-8" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-8" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-8">
+                    <label for="email-item-8" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-8">
+                        <label for="favButton-8" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">taylor@swift.com</span>
+                        <span class="col-5 text-truncate">Your Concert Tickets Receipt</span>
+                        <span class="col-2 text-truncate">5:01PM May 22</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-9" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-9" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-9" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-9" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-9">
+                    <label for="email-item-9" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-9">
+                        <label for="favButton-9" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">info@bankofsouthamerica.com</span>
+                        <span class="col-5 text-truncate">Bank Activity</span>
+                        <span class="col-2 text-truncate">4:27PM May 22</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-10" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-10" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-10" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-10" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-10">
+                    <label for="email-item-10" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-10">
+                        <label for="favButton-10" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">support@techhelp.net</span>
+                        <span class="col-5 text-truncate">Malware/Virus Removal Completed</span>
+                        <span class="col-2 text-truncate">2:24PM May 22</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-11" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-11" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-11" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-11" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-11">
+                    <label for="email-item-11" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-11">
+                        <label for="favButton-11" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">bot@closed.ai</span>
+                        <span class="col-5 text-truncate">Summary of Your Searches</span>
+                        <span class="col-2 text-truncate">12:00PM May 22</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-12" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-12" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-12" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-12" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-12">
+                    <label for="email-item-12" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-12">
+                        <label for="favButton-12" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">mary-jane@spider.man</span>
+                        <span class="col-5 text-truncate">I Miss You</span>
+                        <span class="col-2 text-truncate">10:25AM May 22</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-13" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-13" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-13" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-13" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-13">
+                    <label for="email-item-13" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-13">
+                        <label for="favButton-13" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">venom@carnage.com</span>
+                        <span class="col-5 text-truncate">Pancreas Shipment</span>
+                        <span class="col-2 text-truncate">4:45PM May 21</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-14" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-14" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-14" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-14" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-14">
+                    <label for="email-item-14" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-14">
+                        <label for="favButton-14" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">steverogers@america.com</span>
+                        <span class="col-5 text-truncate">Need Your Help</span>
+                        <span class="col-2 text-truncate">9:00AM May 20</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-15" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-15" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-15" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-15" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-15">
+                    <label for="email-item-15" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-15">
+                        <label for="favButton-15" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">order@costco.com</span>
+                        <span class="col-5 text-truncate">Your Order has been Delivered</span>
+                        <span class="col-2 text-truncate">2:45PM May 20</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-16" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-16" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-16" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-16" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-16">
+                    <label for="email-item-16" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-16">
+                        <label for="favButton-16" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">order@costco.com</span>
+                        <span class="col-5 text-truncate">Your Order is Our for Delivery</span>
+                        <span class="col-2 text-truncate">12:45PM May 19</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-17" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-17" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-17" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-17" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-17">
+                    <label for="email-item-17" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-17">
+                        <label for="favButton-17" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">order@costco.com</span>
+                        <span class="col-5 text-truncate">Your Order has been Confirmed</span>
+                        <span class="col-2 text-truncate">1:45AM May 18</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-18" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-18" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-18" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-18" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-18">
+                    <label for="email-item-18" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-18">
+                        <label for="favButton-18" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">cptmarvel@space.com</span>
+                        <span class="col-5 text-truncate">Status Update</span>
+                        <span class="col-2 text-truncate">2:21AM May 16</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-19" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-19" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-19" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-19" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-19">
+                    <label for="email-item-19" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-19">
+                        <label for="favButton-19" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">dp@deadpool.dp</span>
+                        <span class="col-5 text-truncate">I'm Coming</span>
+                        <span class="col-2 text-truncate">1:11AM May 12</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-20" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-20" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-20" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-20" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-20">
+                    <label for="email-item-20" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-20">
+                        <label for="favButton-20" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">spider@main.com</span>
+                        <span class="col-5 text-truncate">Spidey Photos</span>
+                        <span class="col-2 text-truncate">6:98PM May 10</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-21" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-21" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-21" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-21" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-21">
+                    <label for="email-item-21" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-21">
+                        <label for="favButton-21" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">slime@goo.com</span>
+                        <span class="col-5 text-truncate">Elasticity Issue</span>
+                        <span class="col-2 text-truncate">2:26PM May 1</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-22" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-22" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-22" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-22" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-22">
+                    <label for="email-item-22" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-22">
+                        <label for="favButton-22" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">john@smith.com</span>
+                        <span class="col-5 text-truncate">You're Next...</span>
+                        <span class="col-2 text-truncate">12:00AM April 29</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-23" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-23" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-23" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-23" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-23">
+                    <label for="email-item-23" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-23">
+                        <label for="favButton-23" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">chase@chaser.com</span>
+                        <span class="col-5 text-truncate">Verification Code</span>
+                        <span class="col-2 text-truncate">5:59PM April 14</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-24" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-24" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-24" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-24" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-24">
+                    <label for="email-item-24" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-24">
+                        <label for="favButton-24" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">unknown sender</span>
+                        <span class="col-5 text-truncate">I Know...</span>
+                        <span class="col-2 text-truncate">12:00AM April 1</span>
                     </label>
                 </div>
-                <div class="d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" id="email-25" class="col-1"> 
-                    <label id="selectEmailLabel" for="email-25" class="emailLabel email-list-item d-flex align-items-center container-fluid">
-                        <input type="checkbox" class="btn-check" id="favButton-25" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="favButton-25" class="p-0">
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-25">
+                    <label for="email-item-25" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-25">
+                        <label for="favButton-25" class="btn btn-outline-warning star-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                            </svg>
-                        </label>
-                        <span class="col-3 m-1">Sender</span>
-                        <span class="col-5 m-1">Subject</span>
-                        <span class="col-2 m-1">Date</span>
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">suport@macrohard.com</span>
+                        <span class="col-5 text-truncate">Windors PC Help</span>
+                        <span class="col-2 text-truncate">4:21AM March 28</span>
+                    </label>
+                </div>
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-26">
+                    <label for="email-item-26" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-26">
+                        <label for="favButton-26" class="btn btn-outline-warning star-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">tom@facebook.com</span>
+                        <span class="col-5 text-truncate">Long Time no See</span>
+                        <span class="col-2 text-truncate">9:45AM March 20</span>
+                    </label>
+                </div>
+                <div class="card p-0">
+                    <input type="radio" name="selected" class="btn-check" id="email-item-27">
+                    <label for="email-item-27" class="btn btn-outline-secondary col-12 container-fluid d-flex align-items-center justfy-content-center">
+                        <input type="checkbox" class="form-check-input col-1">
+                        <input type="checkbox" class="btn-check col-1" id="favButton-27">
+                        <label for="favButton-27" class="btn btn-outline-warning star-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                              </svg>
+                        </label> 
+                        <span class="col-3 text-truncate">shawn-m@heartbreakkid.com</span>
+                        <span class="col-5 text-truncate">Sweet Chin Music</span>
+                        <span class="col-2 text-truncate">12:58PM March 2</span>
                     </label>
                 </div>
             </div>
@@ -498,6 +554,8 @@
 
                 <!--email subject line-->
                 <div class="row d-flex align-items-center">
+
+                    <div class="space"></div>
 
                     <!--email subject-->
                     <div class="col-11">
@@ -514,6 +572,8 @@
                         </button>
                     </div>
 
+                    <div class="space"></div>
+                    
                 </div>
 
                 <!--email header-->
@@ -534,8 +594,8 @@
 
                     <!--Fav Button-->
                     <div class="col-1 d-flex justify-content-center">
-                        <input type="checkbox" class="btn-check" id="email-body-fav" autocomplete="off">
-                        <label class="btn btn-outline-warning" for="email-body-fav" class="p-0">
+                        <input type="checkbox" class="btn-check" id="email-body-fav">
+                        <label class="btn btn-outline-warning" for="email-body-fav">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
                                 <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
                             </svg>
@@ -562,25 +622,31 @@
                 <div id="email-content" class="row d-flex justify-content-center">
 
                     <!--email body-->
-                    <div class="card">
+                    <div class="col-11 card">
+                        <div class="space"></div>
                         <img src="FluteCombs.jpg" alt="Flute Combs Concert">  
-                        <br>
                         <h5>Hi Luke</h5>
                         <p>You're invited to join us this Wednesday at 8PM at the North Pole. Flute Combs will be performing for 3 days straight. Music, food, water and snacks will be provide. Cost of entry is FREE!!! Bring yourself and all your friends and family to enjoy a magical night with Flute Comb's top hits.</p>
                         <p>Best Regards,</p>
                         <p>Flute Combs Team</p>
                     </div>
 
+                    <div class="space"></div>
+
                     <!--email actions-->
                     <div class="email-reactions row d-flex justify-content-center">
 
                         <!--text area response-->
                         <div>
-                            <textarea id="text-area" class="form-control" placeholder="Reply" id="floatingTextarea" rows="5"></textarea>     
+                            <textarea id="text-area" class="form-control" placeholder="Reply" id="floatingTextarea" rows="6"></textarea>     
                         </div>
+
+                        <div class="space"></div>
 
                         <!--reply button-->
                         <button type="button" class="btn btn-outline-secondary col-4">Reply</button>
+
+                        <div class="space"></div>
 
                     </div>
 

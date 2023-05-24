@@ -34,7 +34,7 @@ html, body{
     max-height: 92vh;
 }
 
-#top-bar, #bottom-bar, #hamburger, #bottom-bar-desktop{
+#top-bar, #bottom-bar, #hamburger, #bottom-bar-desktop, #top-profile-btn{
     background-color: rgb(138, 43, 226);
     color: white;
 }
@@ -95,46 +95,20 @@ html, body{
     border-radius: 0;
 }
 
-.emailLabel{
-    margin: 0 5px;
-}
-
-.email-list-item > * {
-    background-color: white;
-}
-
-.email-list-item:hover{
-    background-color: rgba(176, 117, 231, 0.74);
-    color: rgb(182, 182, 182);
-}
-
-.selected  * {
-    background-color: rgb(138, 43, 226);
-    color:white;
-}
-.selected input {
-    background-color: white;
-}
-
 /* offcanvas */
 .offcanvas-body{
     background-color: rgb(138, 43, 226);
     color:white;
 }
 
-#composeOffcanvas, #composeOffcanvasLG {
+#compose-Offcanvas, #compose-Offcanvas-LG {
     height: 50vh;
 }
 
-#offcanvasActions{
+#offcanvas-Actions{
     background-color: rgb(182, 182, 182);
     margin: 4vh;
     height: 200px;
-}
-
-.email-reactions > .btn{
-    background-color: rgb(138, 43, 226);
-    color: white;
 }
 
 #email-body-reply{
@@ -154,11 +128,9 @@ img{
     overflow-y: hidden;
 }
 
-
 .space {
     height:2vh;
 }
-
 
 
 /*small and xsmall display media selectors*/
@@ -184,7 +156,7 @@ img{
         border-radius: 10px;
     }
 
-    #offcanvasActions{
+    #offcanvas-Actions{
         width:100vw;
         margin: 0;
     }
@@ -200,4 +172,4 @@ img{
 
 }
 
-/*large + display selector*/
+
